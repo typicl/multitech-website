@@ -16,6 +16,11 @@ export default defineConfig(() => {
       preprocessorOptions: {
         scss: {
           includePaths: ['src'],
+          silenceDeprecations: ['import', 'legacy-js-api'],
+          additionalData: `
+          @use 'sass:color';
+          @import "./src/styles/_base-refs.scss";
+          `,
         },
       },
     },

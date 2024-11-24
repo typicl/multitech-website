@@ -1,0 +1,98 @@
+.title {
+  @include font-title;
+}
+
+.paragraph {
+  @include font-paragraph;
+}
+
+.eyebrow {
+  @include font-eyebrow;
+}
+
+.hero {
+  background-color: #242424;
+  padding: 150px 0;
+
+  .content {
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: left;
+  }
+
+  .title {
+    color: $white;
+    font-size: 52px;
+    margin: 0 0 40px;
+  }
+
+  .paragraph {
+    color: $white;
+    font-size: 24px;
+    margin: 0 0 46px;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 22px;
+}
+
+.section {
+  margin: 100px auto;
+  max-width: 90%;
+
+  &.alt {
+    background: $white-dark;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 58px 0;
+  }
+
+  &.outline {
+    border: 1px solid $blue-dark;
+    border-radius: 4px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 58px 0;
+
+    >div {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+  }
+
+  h2 {
+    @include font-eyebrow;
+    margin-bottom: 22px;
+  }
+
+  h3 {
+    @include font-title;
+    margin-bottom: 22px;
+  }
+
+  h5 {
+    @include font-title;
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  p {
+    @include font-paragraph;
+    margin-bottom: 32px;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.half {
+  display: flex;
+  gap: 84px;
+
+  +.half {
+    margin-top: 44px;
+  }
+}
