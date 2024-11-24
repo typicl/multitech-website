@@ -1,0 +1,55 @@
+.footer {
+  background: $blue;
+
+  h2 {
+    @include font-eyebrow;
+    color: $blue-light;
+  }
+
+  h3 {
+    @include font-title;
+    color: $white;
+  }
+
+  .contact {
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 100px 0;
+    text-align: center;
+
+    h3 {
+      margin-bottom: 40px;
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 40px 0;
+
+    h4 {
+      @include font-bold;
+      color: $white;
+      text-transform: uppercase;
+    }
+
+    p {
+      @include font;
+      color: $white;
+    }
+  }
+
+  .copyright {
+    @include font-bold;
+    background: $blue-dark;
+    color: $white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 28px;
+  }
+}
