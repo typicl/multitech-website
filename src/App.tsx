@@ -5,10 +5,12 @@ import { About } from './pages/About';
 import { Solutions } from './pages/Solutions';
 import { ROUTES } from './constants/routes';
 import { Header } from './components/header';
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
