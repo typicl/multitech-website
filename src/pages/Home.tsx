@@ -4,12 +4,18 @@ import { Footer } from '../components/footer';
 import { TabsSection } from '../components/tabs-section';
 import styles from './page.module.scss';
 import { ROUTES } from '../constants/routes';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFaceSmile } from '@fortawesome/free-regular-svg-icons/faFaceSmile';
+import { faPrint } from '@fortawesome/free-solid-svg-icons/faPrint';
+import { faAward } from '@fortawesome/free-solid-svg-icons/faAward';
+import { faHeadphones } from '@fortawesome/free-solid-svg-icons/faHeadphones';
 
 export function Home() {
   const tabs = [
     {
       label: 'Just Add Paper',
-      description: 'Lorem ipsum',
+      description:
+        'We employ a quality assurance and control process that guarantees high quality products. Our service provides more than just a cartridge, too. Any qualified printer using cartridges purchased through us is guaranteed with a free repair and maintenance package. All you have to do is add your paper.',
     },
     {
       label: 'Cost Per Page',
@@ -85,15 +91,40 @@ export function Home() {
         </p>
       </section>
 
-      <section className={cx(styles.section, styles.alt, styles.center)}>
+      <section
+        className={cx(
+          styles.commitment,
+          styles.section,
+          styles.alt,
+          styles.center
+        )}
+      >
         <h2>Our commitment</h2>
         <h3>Working with us</h3>
+        <div>
+          <div>
+            <FontAwesomeIcon icon={faPrint} />
+            <h4>Simplified Printing</h4>
+          </div>
+          <div>
+            <FontAwesomeIcon icon={faAward} />
+            <h4>Guaranteed Quality</h4>
+          </div>
+          <div>
+            <FontAwesomeIcon icon={faFaceSmile} />
+            <h4>Free Maintenance</h4>
+          </div>
+          <div>
+            <FontAwesomeIcon icon={faHeadphones} />
+            <h4>Full Support</h4>
+          </div>
+        </div>
         <Button to={ROUTES.ABOUT} useOutlineDark>
           About our company
         </Button>
       </section>
 
-      <section className={styles.section}>
+      <section className={cx(styles.printers, styles.section)}>
         <div className={styles.center}>
           <h2>Printers and Multifunction devices</h2>
           <h3>Our machines and capabilities</h3>
@@ -112,11 +143,13 @@ export function Home() {
           <div>
             <h5>Desktop Printers</h5>
             <p>
-              Understanding how your business currently manages its print
-              devices is the first step towards increased productivity. Our goal
-              is to provide you and your employees with the right business tools
-              allowing us to give your business maximum flexibility at the best
-              possible price.
+              We can help you determine not only what kind of printing device
+              you need, but also which printer will work best for your business
+              to ensure you are always getting the most reliable and affordable
+              machine available. By working with you to evaluate the answers to
+              these questions, we can provide printing solutions that are
+              optimized for your functional needs, volume and budget. Call us
+              today to start your free personalized assessment.
             </p>
           </div>
         </div>
@@ -124,25 +157,26 @@ export function Home() {
           <div>
             <h5>New &amp; Refurbished Devices</h5>
             <p>
-              Understanding how your business currently manages its print
-              devices is the first step towards increased productivity. Our goal
-              is to provide you and your employees with the right business tools
-              allowing us to give your business maximum flexibility at the best
-              possible price.
+              When you partner with Multitech, you won't only be receiving the
+              best service, you will also be receiving the best devices too! We
+              offer a large range of new and refurbished HP printers and MFPs
+              that are certain to fulfill your needs.
             </p>
           </div>
           <div>
             <h5>Assessments &amp; Technology</h5>
             <p>
-              Understanding how your business currently manages its print
-              devices is the first step towards increased productivity. Our goal
-              is to provide you and your employees with the right business tools
-              allowing us to give your business maximum flexibility at the best
-              possible price.
+              Keeping your office running smooth is no challenge with our line
+              of HP printers and MFPs. Easily access, share, and print documents
+              using integrated technology such as HP ePrint and Google Cloud
+              Print services. We can help you identify challenges and
+              opportunities in managing your print environment and provide you
+              with practical methods to improve efficiency and
+              cost-effectiveness with our free remote monitoring service.
             </p>
           </div>
         </div>
-        <div className={styles.center}>
+        <div className={cx(styles.center, styles.buttonWrapper)}>
           <Button to={ROUTES.CONTACT}>Contact us for an assessment</Button>
         </div>
       </section>
