@@ -1,42 +1,111 @@
-.title {
-  @include font-title;
-}
-
-.paragraph {
-  @include font-paragraph;
-}
-
-.eyebrow {
-  @include font-eyebrow;
-}
-
-.hero {
-  background-color: #242424;
-  padding: 150px 0;
-
-  .content {
-    margin: 0 auto;
-    max-width: 700px;
-    text-align: left;
-  }
-
+.page {
   .title {
-    color: $white;
-    font-size: 52px;
-    margin: 0 0 40px;
+    @include font-title;
   }
 
   .paragraph {
-    color: $white;
-    font-size: 24px;
-    margin: 0 0 46px;
+    @include font-paragraph;
   }
-}
 
-.buttonWrapper {
-  display: flex;
-  gap: 22px;
-  margin: 46px 0 0;
+  .eyebrow {
+    @include font-eyebrow;
+  }
+
+  .hero {
+    background-color: #242424;
+    padding: 150px 0;
+
+    .content {
+      margin: 0 auto;
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .title {
+      color: $white;
+      font-size: 52px;
+      margin: 0 0 40px;
+      text-transform: none;
+    }
+
+    .paragraph {
+      color: $white;
+      font-size: 24px;
+      margin: 0 0 46px;
+    }
+  }
+
+  h2 {
+    @include font-eyebrow;
+    margin-bottom: 22px;
+  }
+
+  h3 {
+    @include font-title;
+    margin-bottom: 22px;
+  }
+
+  h5 {
+    @include font-title;
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  p {
+    @include font-paragraph;
+    margin-bottom: 32px;
+  }
+
+  form {
+    >div {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      +div {
+        margin-top: 28px;
+      }
+    }
+
+    button {
+      @include font;
+      font-weight: 600;
+      background: $orange;
+      border-radius: 4px;
+      color: $white;
+      display: inline-flex;
+      line-height: 1;
+      padding: 24px 36px;
+      text-align: center;
+
+      &:disabled {
+        background: $gray-light;
+        cursor: default;
+      }
+    }
+  }
+
+  label {
+    @include font-paragraph;
+    color: $blue;
+  }
+
+  input,
+  textarea {
+    @include font-paragraph;
+    background: $white-dark;
+    border: 1px solid $gray-light;
+    border-radius: 12px;
+    line-height: 1.15;
+    padding: 22px;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    margin: 46px 0 0;
+  }
 }
 
 .section {
@@ -61,27 +130,6 @@
       max-width: 660px;
       margin: 0 auto;
     }
-  }
-
-  h2 {
-    @include font-eyebrow;
-    margin-bottom: 22px;
-  }
-
-  h3 {
-    @include font-title;
-    margin-bottom: 22px;
-  }
-
-  h5 {
-    @include font-title;
-    font-size: 22px;
-    margin-bottom: 24px;
-  }
-
-  p {
-    @include font-paragraph;
-    margin-bottom: 32px;
   }
 }
 
@@ -128,5 +176,32 @@
 .printers {
   h3 {
     margin-bottom: 80px;
+  }
+}
+
+.contactGroup {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 148px;
+
+  .details {
+    h5 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 32px;
+    }
+
+    a {
+      @include font-bold;
+      color: $orange;
+    }
+
+    div {
+      +div {
+        margin-top: 80px;
+      }
+    }
   }
 }
