@@ -4,6 +4,7 @@ import styles from './page.module.scss';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 type InputEvent = ChangeEvent<HTMLInputElement>;
+const emailRegex = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
 
 export function Contact() {
   const [name, setName] = useState('');
@@ -15,19 +16,26 @@ export function Contact() {
     setPhone(e.target.value);
   }
   const [email, setEmail] = useState('');
+  const [emailValidated, setEmailValidated] = useState(false);
   function handleEmailChange(e: InputEvent) {
-    setEmail(e.target.value);
+    const email = e.target.value;
+    setEmail(email);
+    if (emailRegex.test(email)) {
+      setEmailValidated(true);
+    } else {
+      setEmailValidated(false);
+    }
   }
   const [message, setMessage] = useState('');
   function handleMessageChange(e: ChangeEvent<HTMLTextAreaElement>) {
     setMessage(e.target.value);
   }
-  const [validated, setValidated] = useState(false);
+  const [captchaValidated, setCaptchaValidated] = useState(false);
   function handleCaptchaSuccess() {
-    setValidated(true);
+    setCaptchaValidated(true);
   }
   function handleCaptchaExpired() {
-    setValidated(false);
+    setCaptchaValidated(false);
   }
   return (
     <div>
@@ -96,7 +104,10 @@ export function Contact() {
                   onExpired={handleCaptchaExpired}
                 />
                 <div className={styles.buttonWrapper}>
-                  <button type="submit" disabled={!validated}>
+                  <button
+                    type="submit"
+                    disabled={!captchaValidated || !emailValidated}
+                  >
                     Send
                   </button>
                 </div>
