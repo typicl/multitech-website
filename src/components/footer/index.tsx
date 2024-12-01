@@ -15,7 +15,7 @@ export function Footer() {
         <div>
           <h4>Contact</h4>
           <p>1-800-641-5291</p>
-          <p>email@multitechofficesupplies.com</p>
+          <p>sales@multitechofficemachines.com</p>
         </div>
         <div>
           <h4>Slidell, LA</h4>

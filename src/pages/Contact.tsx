@@ -117,8 +117,8 @@ export function Contact() {
               <div>
                 <h5>Email</h5>
                 <p>Send us an email at:</p>
-                <a href="mailto:email@multitechofficesupplies.com">
-                  email@multitechofficesupplies.com
+                <a href="mailto:sales@multitechofficemachines.com">
+                  sales@multitechofficemachines.com
                 </a>
               </div>
               <div>
