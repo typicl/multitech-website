@@ -2,8 +2,15 @@ import { Button } from '../components/button';
 import { Footer } from '../components/footer';
 import { ROUTES } from '../constants/routes';
 import styles from './page.module.scss';
+import { faThumbsUp } from '@fortawesome/free-regular-svg-icons/faThumbsUp';
+import { faPrint } from '@fortawesome/free-solid-svg-icons/faPrint';
+import { faWifi } from '@fortawesome/free-solid-svg-icons/faWifi';
+import { faTruck } from '@fortawesome/free-solid-svg-icons/faTruck';
+import { faFileInvoice } from '@fortawesome/free-solid-svg-icons/faFileInvoice';
+import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine';
+import { SolutionItem } from '../components/solution';
 
-export function About() {
+export function Solutions() {
   return (
     <div>
       <main className={styles.page}>
@@ -23,28 +30,58 @@ export function About() {
         </section>
         <section className={styles.section}>
           <div className={styles.center}>
-            <h2>Our team</h2>
-            <h3>Industry Leaders</h3>
+            <h2>Our solution</h2>
+            <h3>See how we can help</h3>
           </div>
           <p>
-            One of the industry-leading office equipment dealers in the
-            Louisiana and Mississippi Gulf Coast area for more than 25 years.
-            Our management team has nearly 50 years of combined experience in
-            the office equipment industry.
+            We'll help you analyze your entire print fleet operation, keeping
+            your efficiency up, and most importantly &mdash; your costs down.
           </p>
-          <div className={styles.team}>
-            <div>
-              <h2>Mike Danna</h2>
-              <p>Vice President</p>
-            </div>
-            <div>
-              <h2>Christ Desoto</h2>
-              <p>Vice President of Sales</p>
-            </div>
-            <div>
-              <h2>Octavian Pasa</h2>
-              <p>Sales Representative</p>
-            </div>
+          <div className={styles.solutions}>
+            <SolutionItem
+              icon={faThumbsUp}
+              image=""
+              title="Print Assessment & Recommendation"
+              description="Your entire print fleet operation will be analyzed using industry proven methodology. Replacements will be OEM-agnostic and recommendations will be based on your environment to maximize productivity and decrease output costs."
+            />
+            <SolutionItem
+              icon={faPrint}
+              image=""
+              title="Initial Fleet Optimization"
+              description="Hardware and supplies will be installed or redployed to consolidate under-utilized devices, maximize productivity and lower operating costs."
+              alternateColor
+              alignment="top"
+            />
+            <SolutionItem
+              icon={faWifi}
+              image=""
+              title="Remote Monitoring & Management"
+              description="Devices will be automatically monitored for consumable usage, service alerts, and life cycle asset management. This frees up internal IT resources to focus on other business needs."
+              flipped
+            />
+            <SolutionItem
+              icon={faTruck}
+              image=""
+              title='"Just in Time" Supplies & Service'
+              description="Based on remote monitoring, supplies and service is automatically dispatched to your location as needed. As a result, productivity and employee satisfaction increases and downtime decreases!"
+              alternateColor
+              alignment="top"
+              flipped
+            />
+            <SolutionItem
+              icon={faFileInvoice}
+              image=""
+              title="Consolidated Invoice"
+              description="Manage your print budget with one consolidated invoice based on per-page costs to remove unexpected expenses."
+            />
+            <SolutionItem
+              icon={faChartLine}
+              image=""
+              title="Ongoing Fleet Optimization"
+              description="Continuous fleet monitoring will uncover additional cost-saving opportunities. Optimized services include usage tracking and strategic recommendations to ensure ongoing improvements to your fleet."
+              alternateColor
+              alignment="top"
+            />
           </div>
         </section>
       </main>

@@ -1,0 +1,42 @@
+.solution {
+  display: flex;
+  align-items: flex-end;
+
+  .content {
+    background: $blue;
+    padding: 20px;
+    width: 460px;
+  }
+
+  svg,
+  h2 {
+    color: $blue-light;
+  }
+
+  p {
+    color: $white;
+  }
+
+  &.alternateColor {
+    .content {
+      background: $white-dark;
+    }
+
+    svg,
+    h2 {
+      color: $blue-dark;
+    }
+
+    p {
+      color: $gray;
+    }
+  }
+
+  &.topAligned {
+    align-items: flex-start;
+  }
+
+  &.flipped {
+    flex-direction: row-reverse;
+  }
+}
