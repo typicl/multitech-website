@@ -12,7 +12,10 @@
   }
 
   .hero {
-    background-color: #242424;
+    background-image: linear-gradient(rgba($blue-dark, 70%),
+        rgba($blue-dark, 70%)),
+      url('../assets/hero.jpg');
+    background-size: cover;
     padding: 150px 0;
 
     .content {
@@ -151,6 +154,17 @@
   }
 }
 
+.multiPrintSolutions,
+.qualityAssessments {
+  display: flex;
+  gap: 40px;
+
+  img {
+    width: 33vw;
+    object-fit: cover;
+  }
+}
+
 .commitment {
   >div {
     color: $blue-dark;
@@ -208,13 +222,20 @@
 
 .team {
   display: flex;
+  gap: 32px;
   justify-content: space-between;
-  max-width: 890px;
+  max-width: 960px;
   margin: 60px auto 0;
   text-align: center;
 
   h2 {
     line-height: 1;
     margin: 28px 0 12px;
+  }
+
+  img {
+    width: 100%;
+    height: 394px;
+    object-fit: cover;
   }
 }

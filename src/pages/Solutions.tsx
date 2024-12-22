@@ -9,6 +9,12 @@ import { faTruck } from '@fortawesome/free-solid-svg-icons/faTruck';
 import { faFileInvoice } from '@fortawesome/free-solid-svg-icons/faFileInvoice';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine';
 import { SolutionItem } from '../components/solution';
+import printAssessment from '../assets/fleet-optimization.jpg';
+import fleetOptimization from '../assets/extra-fleet-optimization.jpg';
+import remoteMonitoring from '../assets/remote-monitoring.jpg';
+import justInTimeSupplies from '../assets/just-in-time-supplies.jpg';
+import consolidatedInvoice from '../assets/consolidated-invoicing.jpg';
+import ongoingFleetOptimization from '../assets/ongoing-fleet-optimization.jpg';
 
 export function Solutions() {
   return (
@@ -37,53 +43,59 @@ export function Solutions() {
             We'll help you analyze your entire print fleet operation, keeping
             your efficiency up, and most importantly &mdash; your costs down.
           </p>
-          <div className={styles.solutions}>
+        </section>
+        <div className={styles.solutions}>
+          <section className={styles.section}>
             <SolutionItem
               icon={faThumbsUp}
-              image=""
+              image={printAssessment}
               title="Print Assessment & Recommendation"
               description="Your entire print fleet operation will be analyzed using industry proven methodology. Replacements will be OEM-agnostic and recommendations will be based on your environment to maximize productivity and decrease output costs."
             />
             <SolutionItem
               icon={faPrint}
-              image=""
+              image={fleetOptimization}
               title="Initial Fleet Optimization"
               description="Hardware and supplies will be installed or redployed to consolidate under-utilized devices, maximize productivity and lower operating costs."
               alternateColor
               alignment="top"
             />
+          </section>
+          <section className={styles.section}>
             <SolutionItem
               icon={faWifi}
-              image=""
+              image={remoteMonitoring}
               title="Remote Monitoring & Management"
               description="Devices will be automatically monitored for consumable usage, service alerts, and life cycle asset management. This frees up internal IT resources to focus on other business needs."
               flipped
             />
             <SolutionItem
               icon={faTruck}
-              image=""
+              image={justInTimeSupplies}
               title='"Just in Time" Supplies & Service'
               description="Based on remote monitoring, supplies and service is automatically dispatched to your location as needed. As a result, productivity and employee satisfaction increases and downtime decreases!"
               alternateColor
               alignment="top"
               flipped
             />
+          </section>
+          <section className={styles.section}>
             <SolutionItem
               icon={faFileInvoice}
-              image=""
+              image={consolidatedInvoice}
               title="Consolidated Invoice"
               description="Manage your print budget with one consolidated invoice based on per-page costs to remove unexpected expenses."
             />
             <SolutionItem
               icon={faChartLine}
-              image=""
+              image={ongoingFleetOptimization}
               title="Ongoing Fleet Optimization"
               description="Continuous fleet monitoring will uncover additional cost-saving opportunities. Optimized services include usage tracking and strategic recommendations to ensure ongoing improvements to your fleet."
               alternateColor
               alignment="top"
             />
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
       <Footer />
     </div>

@@ -2,13 +2,15 @@ import cx from 'classnames';
 import { Button } from '../components/button';
 import { Footer } from '../components/footer';
 import { TabsSection } from '../components/tabs-section';
-import styles from './page.module.scss';
 import { ROUTES } from '../constants/routes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceSmile } from '@fortawesome/free-regular-svg-icons/faFaceSmile';
 import { faPrint } from '@fortawesome/free-solid-svg-icons/faPrint';
 import { faAward } from '@fortawesome/free-solid-svg-icons/faAward';
 import { faHeadphones } from '@fortawesome/free-solid-svg-icons/faHeadphones';
+import solutions from '../assets/solutions.jpg';
+import assement from '../assets/print-assessment.jpg';
+import styles from './page.module.scss';
 
 export function Home() {
   const tabs = [
@@ -50,17 +52,22 @@ export function Home() {
           </div>
         </section>
 
-        <section className={styles.section}>
-          <h2>Multi-print Solutions</h2>
-          <h3>How we can help</h3>
-          <p>
-            By streamlining the flow of information through all of your business
-            processes, our services can help increase overall productivity. Our
-            mission is a simple one: Helping you make your office technology an
-            asset for your business.
-          </p>
-          <TabsSection tabs={tabs} />
-          <Button to={ROUTES.SOLUTIONS}>Learn more about our solutions</Button>
+        <section className={cx(styles.multiPrintSolutions, styles.section)}>
+          <div className={styles.content}>
+            <h2>Multi-print Solutions</h2>
+            <h3>How we can help</h3>
+            <p>
+              By streamlining the flow of information through all of your
+              business processes, our services can help increase overall
+              productivity. Our mission is a simple one: Helping you make your
+              office technology an asset for your business.
+            </p>
+            <TabsSection tabs={tabs} />
+            <Button to={ROUTES.SOLUTIONS}>
+              Learn more about our solutions
+            </Button>
+          </div>
+          <img src={solutions} />
         </section>
 
         <section className={cx(styles.section, styles.outline)}>
@@ -81,16 +88,19 @@ export function Home() {
           </div>
         </section>
 
-        <section className={styles.section}>
-          <h2>Quality assessments</h2>
-          <h3>Increase your Productivity</h3>
-          <p>
-            Understanding how your business currently manages its print devices
-            is the first step towards increased productivity. Our goal is to
-            provide you and your employees with the right business tools
-            allowing us to give your business maximum flexibility at the best
-            possible price.
-          </p>
+        <section className={cx(styles.qualityAssessments, styles.section)}>
+          <div className={styles.content}>
+            <h2>Quality assessments</h2>
+            <h3>Increase your Productivity</h3>
+            <p>
+              Understanding how your business currently manages its print
+              devices is the first step towards increased productivity. Our goal
+              is to provide you and your employees with the right business tools
+              allowing us to give your business maximum flexibility at the best
+              possible price.
+            </p>
+          </div>
+          <img src={assement} alt="" />
         </section>
 
         <section

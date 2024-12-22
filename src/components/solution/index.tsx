@@ -35,7 +35,9 @@ export function SolutionItem({
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
-      <img src={image} alt="title" />
+      <div className={styles.image}>
+        <img src={image} alt="title" />
+      </div>
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import { Button } from '../components/button';
 import { Footer } from '../components/footer';
 import { ROUTES } from '../constants/routes';
+import mike from '../assets/mike.jpg';
+import chris from '../assets/chris.jpg';
+import octavian from '../assets/octavian.jpg';
 import styles from './page.module.scss';
 
 export function About() {
@@ -32,14 +35,17 @@ export function About() {
           </p>
           <div className={styles.team}>
             <div>
+              <img src={mike} />
               <h2>Mike Danna</h2>
               <p>Vice President</p>
             </div>
             <div>
+              <img src={chris} />
               <h2>Christ Desoto</h2>
               <p>Vice President of Sales</p>
             </div>
             <div>
+              <img src={octavian} />
               <h2>Octavian Pasa</h2>
               <p>Sales Representative</p>
             </div>
