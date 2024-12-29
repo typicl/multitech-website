@@ -88,7 +88,7 @@ export function Contact() {
             <div>
               <h5>Send us a message</h5>
               <p>
-                Send a message to our team and we'll get back ni touch within 2
+                Send a message to our team and we'll get back in touch within 2
                 business days.
               </p>
 
