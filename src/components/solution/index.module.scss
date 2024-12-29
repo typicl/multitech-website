@@ -2,10 +2,24 @@
   display: flex;
   align-items: flex-end;
 
+  @include mobile {
+    align-items: flex-start;
+
+    + .solution {
+      margin-top: 60px;
+    }
+  }
+
   .image {
     display: flex;
     height: 596px;
     width: 66vw;
+
+    @include mobile {
+      height: auto;
+      width: 100%;
+      display: none;
+    }
 
     img {
       object-fit: cover;
@@ -25,6 +39,12 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
+
+    @include mobile {
+      height: auto;
+      padding: 40px;
+      width: 100%;
+    }
   }
 
   svg {
@@ -44,6 +64,7 @@
   p {
     color: $white;
     line-height: 1.75;
+    margin: 0;
   }
 
   &.alternateColor {

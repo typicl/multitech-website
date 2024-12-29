@@ -1,4 +1,6 @@
 .page {
+  margin-top: 80px;
+
   .title {
     @include font-title;
   }
@@ -12,11 +14,18 @@
   }
 
   .hero {
-    background-image: linear-gradient(rgba($blue-dark, 70%),
-        rgba($blue-dark, 70%)),
+    background-image: linear-gradient(
+        rgba($blue-dark, 70%),
+        rgba($blue-dark, 70%)
+      ),
       url('../assets/hero.jpg');
     background-size: cover;
     padding: 150px 0;
+    margin-top: -80px;
+
+    @include mobile {
+      padding: 80px 40px;
+    }
 
     .content {
       margin: 0 auto;
@@ -29,6 +38,10 @@
       font-size: 52px;
       margin: 0 0 40px;
       text-transform: none;
+
+      @include mobile {
+        font-size: 40px;
+      }
     }
 
     .paragraph {
@@ -60,12 +73,12 @@
   }
 
   form {
-    >div {
+    > div {
       display: flex;
       flex-direction: column;
       gap: 18px;
 
-      +div {
+      + div {
         margin-top: 28px;
       }
     }
@@ -115,11 +128,19 @@
   margin: 100px auto;
   max-width: 90%;
 
+  @include mobile {
+    margin: 60px auto;
+  }
+
   &.alt {
     background: $white-dark;
     margin: 0 auto;
     max-width: 100%;
     padding: 58px 0;
+
+    @include mobile {
+      padding: 32px;
+    }
   }
 
   &.outline {
@@ -129,7 +150,11 @@
     margin: 0 auto;
     padding: 58px 0;
 
-    >div {
+    @include mobile {
+      padding: 32px;
+    }
+
+    > div {
       max-width: 660px;
       margin: 0 auto;
     }
@@ -145,12 +170,21 @@
   display: flex;
   gap: 84px;
 
-  >div {
+  @include mobile {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  > div {
     flex: 1;
   }
 
-  +.half {
+  + .half {
     margin-top: 44px;
+
+    @include mobile {
+      margin-top: 12px;
+    }
   }
 }
 
@@ -159,14 +193,22 @@
   display: flex;
   gap: 40px;
 
+  @include mobile {
+    flex-direction: column;
+  }
+
   img {
     width: 33vw;
     object-fit: cover;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 
 .commitment {
-  >div {
+  > div {
     color: $blue-dark;
     display: flex;
     gap: 60px;
@@ -175,7 +217,11 @@
     max-width: 890px;
     width: 90%;
 
-    >div {
+    @include mobile {
+      gap: 32px;
+    }
+
+    > div {
       display: flex;
       flex-direction: column;
       gap: 18px;
@@ -198,6 +244,10 @@
   grid-template-columns: 2fr 1fr;
   gap: 148px;
 
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
   .details {
     h5 {
       margin-bottom: 20px;
@@ -213,7 +263,7 @@
     }
 
     div {
-      +div {
+      + div {
         margin-top: 80px;
       }
     }
@@ -228,9 +278,22 @@
   margin: 60px auto 0;
   text-align: center;
 
+  @include mobile {
+    flex-direction: column;
+    max-width: 90%;
+  }
+
   h2 {
     line-height: 1;
     margin: 28px 0 12px;
+
+    @include mobile {
+      margin: 18px 0 8px;
+    }
+  }
+
+  p {
+    margin: 0;
   }
 
   img {
