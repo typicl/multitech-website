@@ -21,11 +21,13 @@ export function Home() {
     },
     {
       label: 'Cost Per Page',
-      description: 'Dolor sit',
+      description:
+        'Our MultiPrint MPS Cost per Page (CPP) Agreement is a pay for what you print per month, to include, support, maintenance, all parts, labor and MultiMax brand cartridges.',
     },
     {
       label: 'Pay One Price',
-      description: 'Amet',
+      description:
+        'Our MultiPrint MPS Pay One Price (POP) Agreement is a fixed monthly price per month, to include, support, maintenance, all parts, labor and MultiMax brand cartridges. This program helps you budget for the year with no surprise additional cost.',
     },
   ];
 

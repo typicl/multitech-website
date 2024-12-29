@@ -14,10 +14,8 @@
   }
 
   .hero {
-    background-image: linear-gradient(
-        rgba($blue-dark, 70%),
-        rgba($blue-dark, 70%)
-      ),
+    background-image: linear-gradient(rgba($blue-dark, 70%),
+        rgba($blue-dark, 70%)),
       url('../assets/hero.jpg');
     background-size: cover;
     padding: 150px 0;
@@ -73,12 +71,12 @@
   }
 
   form {
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       gap: 18px;
 
-      + div {
+      +div {
         margin-top: 28px;
       }
     }
@@ -154,7 +152,7 @@
       padding: 32px;
     }
 
-    > div {
+    >div {
       max-width: 660px;
       margin: 0 auto;
     }
@@ -175,11 +173,11 @@
     gap: 12px;
   }
 
-  > div {
+  >div {
     flex: 1;
   }
 
-  + .half {
+  +.half {
     margin-top: 44px;
 
     @include mobile {
@@ -208,7 +206,7 @@
 }
 
 .commitment {
-  > div {
+  >div {
     color: $blue-dark;
     display: flex;
     gap: 60px;
@@ -221,7 +219,7 @@
       gap: 32px;
     }
 
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       gap: 18px;
@@ -263,7 +261,7 @@
     }
 
     div {
-      + div {
+      +div {
         margin-top: 80px;
       }
     }

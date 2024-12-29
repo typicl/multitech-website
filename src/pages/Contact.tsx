@@ -1,12 +1,26 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import { Footer } from '../components/footer';
 import styles from './page.module.scss';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { init, send } from '@emailjs/browser';
 
 type InputEvent = ChangeEvent<HTMLInputElement>;
 const emailRegex = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
 
 export function Contact() {
+  const form = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    init({
+      publicKey: 'y8gJDepqPz8pAME5t',
+      blockHeadless: true,
+      limitRate: {
+        id: 'app',
+        throttle: 10000,
+      },
+    });
+  }, []);
+
   const [name, setName] = useState('');
   function handleNameChange(e: InputEvent) {
     setName(e.target.value);
@@ -37,6 +51,26 @@ export function Contact() {
   function handleCaptchaExpired() {
     setCaptchaValidated(false);
   }
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    send('service_5hfb9cj', 'template_4a8tmrh', {
+      name,
+      phone,
+      email,
+      message,
+    }).then(
+      result => {
+        console.log(result.text);
+        setName('');
+        setPhone('');
+        setEmail('');
+        setMessage('');
+      },
+      error => {
+        console.log(error.text);
+      }
+    );
+  }
   return (
     <div>
       <main className={styles.page}>
@@ -58,7 +92,7 @@ export function Contact() {
                 business days.
               </p>
 
-              <form>
+              <form ref={form} onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name">Name</label>
                   <input
