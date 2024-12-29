@@ -9,10 +9,6 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig(() => {
   return {
     base: '/multitech-website/',
-    build: {
-      outDir: 'build',
-      target: 'esnext',
-    },
     css: {
       preprocessorOptions: {
         scss: {
